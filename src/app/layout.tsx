@@ -2,10 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-export const metadata: Metadata = {
-  title: "Liga 13",
-  description: "Site oficial da Liga 13 de Futsal",
-};
+// src/app/layout.tsx
+
+export const metadata = {
+  title: 'Liga 13 - A Elite do Futsal',
+  description: 'Organização e Tradição no Futsal da Zona Norte de BH',
+  icons: {
+    icon: '/logo.png', // Caminho para a sua logo na pasta public
+    // Se quiser garantir suporte a dispositivos Apple:
+    apple: '/logo.png', 
+  },
+}
 
 export default function RootLayout({
   children,

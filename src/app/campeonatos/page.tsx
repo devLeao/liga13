@@ -13,7 +13,7 @@ export default function Campeonatos() {
       nome: "3ª Edição Copa Talentos da Bola",
       status: "Inscrições Abertas",
       data: "Março 2026",
-      times: "8 Equipes",
+      times: "4 Equipes por categoria",
       imagem: "/noticias/talento.jpg", 
     },
     {

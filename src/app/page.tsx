@@ -149,7 +149,7 @@ export default function Home() {
           
           {/* Lado Esquerdo: Texto */}
           <div>
-            <span className="text-liga-gold font-bold uppercase tracking-widest text-sm mb-2 block">Desde 2013</span>
+            <span className="text-liga-gold font-bold uppercase tracking-widest text-sm mb-2 block">Desde 2023</span>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase italic leading-tight">
               Muito mais que <br/> <span className="text-liga-red">apenas futebol</span>
             </h2>
@@ -165,11 +165,11 @@ export default function Home() {
                 <div className="text-xs text-gray-500 uppercase tracking-widest">Times Ativos</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-white mb-1">+500</div>
+                <div className="text-4xl font-black text-white mb-1">+100</div>
                 <div className="text-xs text-gray-500 uppercase tracking-widest">Jogos/Ano</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-white mb-1">13</div>
+                <div className="text-4xl font-black text-white mb-1">3</div>
                 <div className="text-xs text-gray-500 uppercase tracking-widest">Anos de História</div>
               </div>
             </div>
@@ -212,7 +212,7 @@ export default function Home() {
                 LIGA <span className="text-liga-gold text-4xl">13</span>
              </Link>
              <p className="text-gray-500 text-sm leading-relaxed">
-                Organização, paixão e competitividade. O palco dos grandes craques da várzea em BH.
+                Organização, paixão e competitividade. O palco dos grandes craques da várzea em BH e região.
              </p>
           </div>
 
@@ -235,10 +235,7 @@ export default function Home() {
                    <MapPin size={18} className="text-liga-gold flex-shrink-0"/> 
                    <span>Mantiqueira, Belo Horizonte - MG</span>
                 </li>
-                <li className="flex items-center gap-3">
-                   <Mail size={18} className="text-liga-gold flex-shrink-0"/> 
-                   <span>contato@liga13.com.br</span>
-                </li>
+              
              </ul>
           </div>
 
