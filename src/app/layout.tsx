@@ -8,9 +8,7 @@ export const metadata = {
   title: 'Liga 13 - A Elite do Futsal',
   description: 'Organização e Tradição no Futsal da Zona Norte de BH',
   icons: {
-    icon: '/logo.png', // Caminho para a sua logo na pasta public
-    // Se quiser garantir suporte a dispositivos Apple:
-    apple: '/logo.png', 
+    icon: '/icon.png', // Alterado para bater com o nome do arquivo na pasta
   },
 }
 
