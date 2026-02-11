@@ -97,51 +97,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- SEÇÃO 3: NOTÍCIAS --- */}
-      <section className="relative z-10 py-20 bg-liga-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-12 border-b border-white/10 pb-4">
-            <div>
-              <span className="text-liga-red font-bold uppercase tracking-widest text-sm">Atualizações</span>
-              <h2 className="text-3xl md:text-5xl font-black text-white mt-2 uppercase italic">
-                Últimas <span className="text-liga-gold">Notícias</span>
-              </h2>
-            </div>
-            <Link href="/noticias" className="hidden md:flex items-center gap-2 text-white hover:text-liga-gold transition-colors group">
-              <span className="uppercase font-bold text-sm tracking-widest">Ver todas</span>
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+   {/* --- SEÇÃO 3: NOTÍCIAS --- */}
+<section className="relative z-10 py-20 bg-liga-black">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex items-end justify-between mb-12 border-b border-white/10 pb-4">
+      <div>
+        <span className="text-liga-red font-bold uppercase tracking-widest text-sm">Atualizações</span>
+        <h2 className="text-3xl md:text-5xl font-black text-white mt-2 uppercase italic">
+          Últimas <span className="text-liga-gold">Notícias</span>
+        </h2>
+      </div>
+      <Link href="/noticias" className="hidden md:flex items-center gap-2 text-white hover:text-liga-gold transition-colors group">
+        <span className="uppercase font-bold text-sm tracking-widest">Ver todas</span>
+        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+      </Link>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {noticias.map((item) => (
-              <article key={item.id} className="group bg-neutral-900/50 border border-white/5 hover:border-liga-red transition-all duration-300 rounded-sm overflow-hidden hover:-translate-y-2 cursor-pointer">
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image src={item.imagem} alt={item.titulo} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute top-4 left-4 bg-liga-red text-white text-xs font-bold px-3 py-1 uppercase tracking-wider shadow-lg">
-                    {item.categoria}
-                  </div>
-                </div>
-                <div className="p-6 relative">
-                  <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">
-                    <Calendar size={14} className="text-liga-gold" />
-                    {item.data}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-liga-gold transition-colors line-clamp-2">
-                    {item.titulo}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {item.resumo}
-                  </p>
-                  <div className="flex items-center text-liga-red text-sm font-bold uppercase tracking-wider group-hover:text-white transition-colors">
-                    Ler matéria <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {noticias.map((item) => (
+        <Link key={item.id} href={`/noticias/${item.id}`}>
+          <article className="group bg-neutral-900/50 border border-white/5 hover:border-liga-red transition-all duration-300 rounded-sm overflow-hidden hover:-translate-y-2 h-full flex flex-col">
+            <div className="relative h-64 w-full overflow-hidden">
+              <Image src={item.imagem} alt={item.titulo} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute top-4 left-4 bg-liga-red text-white text-xs font-bold px-3 py-1 uppercase tracking-wider shadow-lg">
+                {item.categoria}
+              </div>
+            </div>
+            <div className="p-6 relative flex flex-col flex-grow">
+              <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">
+                <Calendar size={14} className="text-liga-gold" />
+                {item.data}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-liga-gold transition-colors line-clamp-2">
+                {item.titulo}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                {item.resumo}
+              </p>
+              <div className="mt-auto flex items-center text-liga-red text-sm font-bold uppercase tracking-wider group-hover:text-white transition-colors">
+                Ler matéria <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
+              </div>
+            </div>
+          </article>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* --- SEÇÃO 4: INSTITUCIONAL (NOVO!) --- */}
       <section className="relative py-24 bg-[#0a0a0a] border-t border-white/5">
