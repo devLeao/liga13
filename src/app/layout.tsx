@@ -4,13 +4,17 @@ import Navbar from "./components/Navbar";
 
 // src/app/layout.tsx
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Liga 13 - A Elite do Futsal',
   description: 'Organização e Tradição no Futsal da Zona Norte de BH',
   icons: {
-    icon: '/icon.png', // Alterado para bater com o nome do arquivo na pasta
+    // O segredo: Apenas /favicon.ico (sem public e sem ponto)
+    // O ?v=2 força o navegador do seu cliente a limpar o cache da Vercel
+    icon: '/favicon.ico?v=2', 
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
-}
+};
 
 export default function RootLayout({
   children,
@@ -19,9 +23,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      {/* ADICIONADO: 'flex flex-col min-h-screen' 
-         Isso remove qualquer espaço misterioso entre o menu e o conteúdo 
-      */}
       <body className="antialiased bg-liga-black text-white flex flex-col min-h-screen">
         <Navbar />
         {/* Adicionado flex-1 para ocupar o resto da tela corretamente */}
