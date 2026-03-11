@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Calendar, ArrowRight, Trophy, Users, Award, MapPin, Instagram, Facebook, Mail } from "lucide-react";
 
 export default function Home() {
-  const logos = Array.from({ length: 12 }, (_, i) => i + 1);
+  const logos = Array.from({ length: 13 }, (_, i) => i + 1);
 
   // DADOS DAS NOTÍCIAS (Atualizado)
   const noticias = [
@@ -70,32 +70,43 @@ export default function Home() {
       </section>
 
 {/* --- SEÇÃO 2: TELÃO DE PATROCINADORES --- */}
-      {/* O 'mt-0' mantém o mobile fixo. O 'md:-mt-52' sobe o telão no PC. */}
-      <section className="ticker-container w-full bg-black border-y-2 border-liga-gold relative z-10 py-3 md:py-6 shadow-2xl mt-0 md:-mt-52">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none z-20"></div>
-        
-        <div className="flex flex-nowrap w-full whitespace-nowrap overflow-hidden relative z-10">
-          
-          {/* PRIMEIRO GRUPO DE LOGOS */}
-          <div className="animate-ticker flex items-center flex-shrink-0">
-            {logos.map((num) => (
-              <div key={`original-${num}`} className="relative w-28 h-16 md:w-64 md:h-32 mx-4 md:mx-8 flex-shrink-0 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110 hover:z-50 cursor-pointer flex items-center justify-center bg-black/30 rounded-lg border border-white/5">
-                <Image src={`/patrocinadores/${num}.png`} alt={`Patrocinador ${num}`} fill className="object-contain" />
-              </div>
-            ))}
-          </div>
-
-          {/* SEGUNDO GRUPO (REPETIÇÃO PARA O LOOP INFINITO) */}
-          <div className="animate-ticker flex items-center flex-shrink-0">
-            {logos.map((num) => (
-              <div key={`copy-${num}`} className="relative w-28 h-16 md:w-64 md:h-32 mx-4 md:mx-8 flex-shrink-0 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110 hover:z-50 cursor-pointer flex items-center justify-center bg-black/30 rounded-lg border border-white/5">
-                <Image src={`/patrocinadores/${num}.png`} alt={`Patrocinador ${num}`} fill className="object-contain" />
-              </div>
-            ))}
-          </div>
-
+<section className="ticker-container w-full bg-black border-y-2 border-liga-gold relative z-10 py-6 md:py-6 shadow-2xl mt-0 md:-mt-52">
+  <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none z-20"></div>
+  
+  <div className="flex flex-nowrap w-full whitespace-nowrap overflow-hidden relative z-10">
+    
+    {/* PRIMEIRO GRUPO DE LOGOS */}
+    <div className="animate-ticker flex items-center flex-shrink-0">
+      {logos.map((num) => (
+        <div key={`original-${num}`} 
+             className="relative w-40 h-24 md:w-64 md:h-32 mx-6 md:mx-8 flex-shrink-0 
+                        grayscale-0 md:grayscale md:hover:grayscale-0 
+                        opacity-100 md:opacity-80 md:hover:opacity-100 
+                        transition-all duration-300 transform hover:scale-110 
+                        cursor-pointer flex items-center justify-center 
+                        bg-black/30 rounded-lg border border-white/10">
+          <Image src={`/patrocinadores/${num}.png`} alt={`Patrocinador ${num}`} fill className="object-contain p-2" />
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* SEGUNDO GRUPO (REPETIÇÃO PARA O LOOP) */}
+    <div className="animate-ticker flex items-center flex-shrink-0">
+      {logos.map((num) => (
+        <div key={`copy-${num}`} 
+             className="relative w-40 h-24 md:w-64 md:h-32 mx-6 md:mx-8 flex-shrink-0 
+                        grayscale-0 md:grayscale md:hover:grayscale-0 
+                        opacity-100 md:opacity-80 md:hover:opacity-100 
+                        transition-all duration-300 transform hover:scale-110 
+                        cursor-pointer flex items-center justify-center 
+                        bg-black/30 rounded-lg border border-white/10">
+          <Image src={`/patrocinadores/${num}.png`} alt={`Patrocinador ${num}`} fill className="object-contain p-2" />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
 
    {/* --- SEÇÃO 3: NOTÍCIAS --- */}
 <section className="relative z-10 py-20 bg-liga-black">
