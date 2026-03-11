@@ -37,7 +37,7 @@ export default function Navbar() {
               <Link href="/campeonatos" className="text-white hover:text-liga-gold text-xs font-black uppercase tracking-widest transition-colors">Campeonatos</Link>
               <Link href="/sobre" className="text-white hover:text-liga-gold text-xs font-black uppercase tracking-widest transition-colors">Institucional</Link>
               <Link href="/noticias" className="text-white hover:text-liga-gold text-xs font-black uppercase tracking-widest transition-colors">Notícias</Link>
-              <Link href="/contato" className="bg-liga-red hover:bg-red-800 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-liga-red/20">Contato</Link>
+              
             </div>
 
             {/* TRÊS PONTINHOS SOMENTE NO MOBILE */}
