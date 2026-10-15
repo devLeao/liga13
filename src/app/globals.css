@@ -1,43 +1,97 @@
 @import "tailwindcss";
 
 @theme {
-  --color-liga-red: #7f1d1d;
-  --color-liga-black: #111111;
-  --color-liga-gold: #C5A059;
+  /* Identidade Liga 13: preto, vermelho-fogo, brasa e dourado */
+  --color-liga-black: #0a0a0a;
+  --color-liga-surface: #141414;
+  --color-liga-line: #262626;
+  --color-liga-red: #d62828;
+  --color-liga-ember: #f77f00;
+  --color-liga-gold: #e3b24f;
+  --color-liga-gold-soft: #f3d38a;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-barlow), "Arial Narrow", ui-sans-serif, sans-serif;
+
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
 
 :root {
-  background-color: #111111;
-  color: #ffffff;
+  color-scheme: dark;
+  --nav-h: 72px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-liga-black);
 }
 
 body {
-  background: #111111;
-  min-height: 100vh;
+  background: var(--color-liga-black);
+  color: #fff;
   overflow-x: hidden;
 }
 
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+::selection {
+  background: var(--color-liga-gold);
+  color: #000;
 }
 
-.animate-ticker {
-  animation: ticker 60s linear infinite;
-  display: flex;
-  min-width: 100%;
-  will-change: transform;
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
 
-.ticker-container:hover .animate-ticker {
+/* Textura de brasa usada em faixas de destaque */
+.bg-brasa {
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgb(214 40 40 / 0.35), transparent 60%),
+    radial-gradient(90% 70% at 100% 100%, rgb(247 127 0 / 0.22), transparent 60%),
+    var(--color-liga-black);
+}
+
+.texto-ouro {
+  background: linear-gradient(180deg, #fff3cf 0%, var(--color-liga-gold) 55%, #b9822a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.marquee-pausa:hover .animate-marquee {
   animation-play-state: paused;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+/* Campos do painel admin */
+.campo {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-liga-line);
+  background: #0f0f0f;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.campo:focus {
+  border-color: var(--color-liga-gold);
+  box-shadow: 0 0 0 3px rgb(227 178 79 / 0.15);
+}
+.campo::placeholder {
+  color: #6b6b6b;
 }
