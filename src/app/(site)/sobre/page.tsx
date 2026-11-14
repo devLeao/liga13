@@ -35,7 +35,7 @@ const PILARES = [
 
 const DIRETORIA = [
   { cargo: "Presidência", nome: "Pedro Souto", cor: "border-liga-red" },
-  { cargo: "Vice-presidência", nome: "Erick Gustavo", cor: "border-white/30" },
+  { cargo: "Vice-presidência", nome: "Victor Leles", cor: "border-white/30" },
   { cargo: "Marketing", nome: "Leandro Filipe", cor: "border-liga-gold" },
 ];
 
@@ -114,8 +114,8 @@ export default function Sobre() {
               <div className="space-y-5">
                 <p className="font-display text-3xl font-bold uppercase italic text-liga-gold">Desde 2023</p>
                 <p className="leading-relaxed text-white/70">
-                  Tudo começou com uma ideia simples, mas cheia de propósito. O presidente Pedro, ao lado do amigo e
-                  vice-presidente Erick Gustavo, começou a questionar o modelo tradicional das competições amadoras: por
+                  Tudo começou com uma ideia simples, mas cheia de propósito. O presidente Pedro, ao lado do amigo
+                  Erick Gustavo, começou a questionar o modelo tradicional das competições amadoras: por
                   que organizar campeonatos somente em uma única quadra?
                 </p>
                 <p className="border-l-4 border-liga-red pl-5 leading-relaxed text-white/80">
